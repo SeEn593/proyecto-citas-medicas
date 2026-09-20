@@ -24,3 +24,13 @@ Beneficios
 - Eficiencia Operativa: reduce filas presenciales y llamadas telefónicas.
 - Disponibilidad Inmediata: validación en tiempo real sin recargar la interfaz.
 - Accesibilidad e Inclusión: diseño responsive bajo estándares WCAG.
+## 🔐 Nota sobre Seguridad
+
+Por buenas prácticas de seguridad, el archivo `.env` (que contiene 
+credenciales reales de MySQL) **NO se incluye** en este proyecto.
+
+En su lugar, se proporciona `.env.example` como plantilla. Para ejecutar:
+
+1. Copiar `.env.example` a `.env`
+2. Configurar las credenciales locales de MySQL
+3. Ejecutar `npm install` y `npm run dev`
