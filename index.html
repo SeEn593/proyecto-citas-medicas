@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MEDICITAS - Plataforma web para la gestión y reserva de citas médicas en línea">
+  <title>MEDICITAS - Reserva de Citas Médicas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="logo">
+      <img src="img/logo-medicitas.png"
+     alt="Logotipo de MEDICITAS - Cruz médica azul"
+     width="50" height="50">
+      <h1>MEDICITAS</h1>
+    </div>
+
+
+    <nav class="nav" aria-label="Navegación principal">
+      <ul class="nav__list">
+        <li><a href="#inicio" class="nav__link">Inicio</a></li>
+        <li><a href="#especialidades" class="nav__link">Especialidades</a></li>
+        <li><a href="#agendar" class="nav__link">Agendar Cita</a></li>
+        <li><a href="#citas" class="nav__link">Mis Citas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main id="inicio">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h2 id="hero-title">Reserva tu cita médica en línea, 24/7</h2>
+      <p>MEDICITAS te permite agendar sin filas ni llamadas. Selecciona tu especialista y horario desde cualquier dispositivo.</p>
+      <a href="#agendar" class="btn btn--primary">Agendar ahora</a>
+    </section>
+
+    <!-- Catálogo de especialidades (CSS Grid) -->
+    <section id="especialidades" class="especialidades" aria-labelledby="esp-title">
+      <h2 id="esp-title">Nuestras Especialidades</h2>
+      <div class="grid-especialidades" id="gridEspecialidades">
+        <!-- Se generan dinámicamente desde app.js -->
+      </div>
+    </section>
+
+    <!-- Formulario de agendamiento -->
+    <section id="agendar" class="agendar" aria-labelledby="agendar-title">
+      <h2 id="agendar-title">Agendar una Cita</h2>
+
+      <form id="formCita" class="form" novalidate>
+        <div class="form__group">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" required
+                 placeholder="Ej: Juan Pérez" autocomplete="name">
+          <span class="error" id="errorNombre" role="alert"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="cedula">Número de cédula (10 dígitos) *</label>
+          <input type="text" id="cedula" name="cedula" required
+                 maxlength="10" inputmode="numeric" placeholder="0123456789">
+          <span class="error" id="errorCedula" role="alert"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="correo">Correo electrónico *</label>
+          <input type="email" id="correo" name="correo" required
+                 placeholder="usuario@correo.com" autocomplete="email">
+          <span class="error" id="errorCorreo" role="alert"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="telefono">Número de teléfono (10 dígitos) *</label>
+          <input type="tel" id="telefono" name="telefono" required
+                 maxlength="10" inputmode="tel" placeholder="0991234567">
+          <span class="error" id="errorTelefono" role="alert"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="especialidad">Especialidad *</label>
+          <select id="especialidad" name="especialidad" required>
+            <option value="">-- Seleccione --</option>
+            <option value="medicina-general">Medicina General</option>
+            <option value="pediatria">Pediatría</option>
+            <option value="cardiologia">Cardiología</option>
+            <option value="dermatologia">Dermatología</option>
+            <option value="odontologia">Odontología</option>
+            <option value="ginecologia">Ginecología</option>
+          </select>
+          <span class="error" id="errorEspecialidad" role="alert"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="fecha">Fecha de la cita *</label>
+          <input type="date" id="fecha" name="fecha" required>
+          <span class="error" id="errorFecha" role="alert"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="hora">Horario disponible *</label>
+          <select id="hora" name="hora" required disabled>
+            <option value="">Seleccione una fecha primero</option>
+          </select>
+          <span class="error" id="errorHora" role="alert"></span>
+        </div>
+
+        <button type="submit" class="btn btn--primary">Confirmar Cita</button>
+      </form>
+
+      <div id="mensajeExito" class="mensaje-exito" hidden role="status"></div>
+    </section>
+
+    <!-- Mis citas -->
+    <section id="citas" class="citas" aria-labelledby="citas-title">
+      <h2 id="citas-title">Mis Citas</h2>
+      <div id="listaCitas" class="lista-citas">
+        <p class="vacio">Aún no tienes citas registradas.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <p>&copy; 2025 MEDICITAS - Proyecto académico | Desarrollo de Entornos Web</p>
+    <p>Contacto: <a href="mailto:info@medicitas.com">info@medicitas.com</a></p>
+  </footer>
+
+  <script src="js/validacion.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/api.js"></script>
+</body>
+</html>

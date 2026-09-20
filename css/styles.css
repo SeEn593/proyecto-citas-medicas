@@ -1,0 +1,329 @@
+/* ============ RESET Y VARIABLES ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #0066cc;
+  --color-primary-dark: #004a99;
+  --color-secondary: #00a878;
+  --color-text: #1a1a1a;
+  --color-bg: #f7f9fc;
+  --color-white: #ffffff;
+  --color-error: #c1121f;
+  --color-border: #cbd5e1;
+  --radius: 8px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transition: all 0.25s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ============ HEADER con FLEXBOX ============ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: var(--color-white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo h1 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.nav__list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav__link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  background: var(--color-primary);
+  color: var(--color-white);
+  outline: 3px solid var(--color-secondary);
+}
+
+/* ============ HERO ============ */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0066cc, #00a878);
+  color: var(--color-white);
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* ============ BOTONES ============ */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* ============ GRID ESPECIALIDADES ============ */
+.especialidades {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.especialidades h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+}
+
+.grid-especialidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-especialidad {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.card-especialidad:hover,
+.card-especialidad:focus {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.card-especialidad img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 1rem;
+}
+
+.card-especialidad h3 {
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.card-especialidad p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ============ FORMULARIO con FLEXBOX ============ */
+.agendar {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.agendar h2 {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form__group label {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form__group input,
+.form__group select {
+  padding: 0.75rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background: var(--color-white);
+}
+
+.form__group input:focus,
+.form__group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
+}
+
+.form__group input.invalido,
+.form__group select.invalido {
+  border-color: var(--color-error);
+}
+
+.error {
+  color: var(--color-error);
+  font-size: 0.85rem;
+  min-height: 1.2rem;
+}
+
+/* ============ MENSAJE ÉXITO ============ */
+.mensaje-exito {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #d1fae5;
+  color: #065f46;
+  border-left: 5px solid var(--color-secondary);
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+/* ============ LISTA DE CITAS ============ */
+.citas {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+.citas h2 {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.lista-citas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cita-item {
+  background: var(--color-white);
+  padding: 1rem 1.5rem;
+  border-left: 5px solid var(--color-secondary);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cita-item button {
+  background: var(--color-error);
+  color: var(--color-white);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.vacio {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  background: #1a1a1a;
+  color: var(--color-white);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+.footer a {
+  color: #7dd3fc;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .agendar,
+  .citas {
+    padding: 1.2rem;
+    margin: 2rem 1rem;
+  }
+}
